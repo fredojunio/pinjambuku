@@ -4,6 +4,13 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\KatalogController;
 
+//User
+use App\Http\Controllers\User\PinjamController;
+
+//Admin
+use App\Http\Controllers\Admin\BookController;
+use App\Http\Controllers\Admin\PinjamController as APinjamController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +37,11 @@ Route::group([
     'as' => 'admin.'
 ], function() {
     //route Admin
+    Route::resource('book', BookController::class);
+    Route::resource('pinjam', APinjamController::class);
+    Route::post('pinjam/{id}/terima', [APinjamController::class, 'terima'])->name('pinjam.terima');
+    Route::post('pinjam/{id}/tolak', [APinjamController::class, 'tolak'])->name('pinjam.tolak');
+    Route::post('pinjam/{id}/selesai', [APinjamController::class, 'selesai'])->name('pinjam.selesai');
 });
 
 
@@ -40,4 +52,5 @@ Route::group([
     'as' => 'user.'
 ], function () {
     //route User
+    Route::resource('pinjam', PinjamController::class);
 });

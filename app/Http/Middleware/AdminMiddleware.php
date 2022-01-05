@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Auth;
 
 class AdminMiddleware
 {
@@ -17,7 +18,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()) {
-            if (Auth::user()->isAdmin != true) {
+            if (Auth::user()->isAdmin != 1) {
                 return redirect()->to('logout');
             }
             return $next($request);

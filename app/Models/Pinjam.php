@@ -18,4 +18,12 @@ class Pinjam extends Model
         'tglKembali',
     ];
     
+    public function user() {
+        return $this->belongsTo(User::class, 'userId', 'id');
+    }
+
+    public function book(){
+        return $this->belongsTo(Book::class, 'bookId', 'id');
+    }
+
 }

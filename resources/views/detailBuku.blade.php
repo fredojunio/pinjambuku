@@ -19,12 +19,12 @@
                 <hr>
                 <div class="d-flex">
                     <p class="">
-                        tanggal publikasi <br>
-                        bahasa <br>
-                        penulis <br>
-                        penerbit <br>
-                        jumlah halaman <br>
-                        kategori
+                        Tanggal publikasi <br>
+                        Bahasa <br>
+                        Penulis <br>
+                        Penerbit <br>
+                        Jumlah halaman <br>
+                        Kategori
                     </p>
                     <p class="mx-3">
                         : {{ $book->publikasi }}<br>
@@ -43,9 +43,21 @@
                 </p>
 
                 {{-- if belum pinjam --}}
-                <a href="" class="btn btn-success">
-                    Pinjam
-                </a>
+                @if (Auth::check() && Auth::user()->isAdmin == 1)
+                    
+                @elseif (Auth::check() && Auth::user()->isAdmin == 0)
+                <form action="{{ route('user.pinjam.store') }}" method="post">
+                    @csrf
+                    <input type="hidden" name="bookId" value="{{ $book->id }}">
+                    <input type="hidden" name="userId" value="{{ Auth::user()->id }}">
+                    <button type="submit" class="btn btn-success text-white">
+                        Pinjam
+                    </button>    
+                </form>
+                @else
+                <a href="{{ route('login') }}" class="btn btn-success text-white">Pinjam</a>
+                @endif
+                
             </div>
         </div>
     </div>
