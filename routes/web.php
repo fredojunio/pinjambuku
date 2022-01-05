@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\KatalogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('detailBuku');
-});
+Route::get('/', [KatalogController::class, 'index']);
+Route::get('/katalog/{id}', [KatalogController::class, 'show'])->name('katalog.show');
 
 Auth::routes();
 

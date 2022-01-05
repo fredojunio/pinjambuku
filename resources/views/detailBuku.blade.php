@@ -9,12 +9,12 @@
         </h1>
 
         <div class="row">
-            <div class="card mx-2 col-lg-4" style="width: 18rem;">
-                <img class="card-img-top" src="{{ asset('img/books/buku.jpg') }}" alt="Card image cap">
+            <div class="card mx-2 col-lg-4 mb-3" style="width: 18rem;">
+                <img class="card-img-top" src="{{ asset($book->img) }}" alt="Card image cap">
             </div>
             <div class="w-75">
                 <h2>
-                    Ini judul buku yang panjang
+                    {{ $book->judul }}
                 </h2>
                 <hr>
                 <div class="d-flex">
@@ -27,21 +27,19 @@
                         kategori
                     </p>
                     <p class="mx-3">
-                        : <br>
-                        : <br>
-                        : <br>
-                        : <br>
-                        : <br>
-                        :
+                        : {{ $book->publikasi }}<br>
+                        : {{ $book->bahasa }}<br>
+                        : {{ $book->penulis }}<br>
+                        : {{ $book->penerbit }}<br>
+                        : {{ $book->halaman }}<br>
+                        : {{ $book->kategori }}
                     </p>
                 </div>
                 <h4>
                     Deskripsi
                 </h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sequi deserunt debitis molestias
-                    non minus voluptatibus expedita architecto optio. Hic facilis possimus suscipit inventore minima
-                    aliquid tempora, ratione veritatis debitis!
+                    {{ $book->deskripsi }}
                 </p>
 
                 {{-- if belum pinjam --}}

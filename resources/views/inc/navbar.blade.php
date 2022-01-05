@@ -7,11 +7,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Katalog</a>
+                <li class="nav-item">
+                    <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="/">Katalog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Peminjaman</a>
+                    <a class="nav-link {{ (request()->is('admin/cities')) ? 'active' : '' }}" href="#">Peminjaman</a>
                 </li>
             </ul>
         </div>
