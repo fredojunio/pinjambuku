@@ -22,7 +22,8 @@ class Book extends Model
         'penulis',
         'penerbit',
         'halaman',
-        'kategori'
+        'kategori',
+        'img',
     ];
 
     public function pinjam(){

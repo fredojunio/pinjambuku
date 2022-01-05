@@ -18,6 +18,7 @@ class CreatePinjamsTable extends Migration
             $table->unsignedBigInteger('userId');
             $table->unsignedBigInteger('bookId');
             $table->string('status');
+            $table->date('tglKembali');
             $table->timestamps();
         });
     }

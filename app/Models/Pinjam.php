@@ -15,6 +15,7 @@ class Pinjam extends Model
         'userId',
         'bookId',
         'status',
+        'tglKembali',
     ];
     
 }

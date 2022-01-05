@@ -23,6 +23,7 @@ class CreateBooksTable extends Migration
             $table->string('penerbit');
             $table->string('halaman');
             $table->string('kategori');
+            $table->string('img');
             $table->timestamps();
         });
     }

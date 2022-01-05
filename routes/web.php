@@ -14,13 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('detailBuku');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+// Setup routing untuk admin
 Route::group([
     'middleware' => 'admin',
     'prefix' => 'admin',
@@ -29,6 +31,8 @@ Route::group([
     //route Admin
 });
 
+
+// Setup routing untuk user
 Route::group([
     'middleware' => 'user',
     'prefix' => 'user',
