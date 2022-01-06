@@ -13,6 +13,7 @@
         <div class="py-3">
             {{-- katalog --}}
             <div class="row">
+                <!-- distribusi array buku -->
                 @foreach ($books as $book)
                     
                 
