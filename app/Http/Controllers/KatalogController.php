@@ -8,6 +8,7 @@ use App\Models\Book;
 class KatalogController extends Controller
 {
     public function index() {
+        // penggunaan array books untuk distribusi data buku
         $books = Book::all();
         return view('katalog', compact('books'));
     }

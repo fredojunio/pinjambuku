@@ -29,7 +29,7 @@ class BookSeeder extends Seeder
         $book = new Book();
         $book->judul = 'Sebuah Seni untuk Bersikap Bodo Amat';
         $book->deskripsi = '"Selama beberapa tahun belakangan, Mark Manson—melalui blognya yang sangat populer—telah membantu mengoreksi harapan-harapan delusional kita, baik mengenai diri kita sendiri maupun dunia. Ia kini menuangkan.';
-        $book->publikasi = '2005=20-05';
+        $book->publikasi = '2005-20-05';
         $book->bahasa = 'Indonesia';
         $book->penulis = 'Mark Manson';
         $book->penerbit = 'Gramedia';

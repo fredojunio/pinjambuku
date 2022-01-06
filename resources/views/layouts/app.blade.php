@@ -35,21 +35,23 @@
 </head>
 
 <body>
+    <div class="min-vh-100">
     @if(Auth::check())
     @if(Auth::user()->isAdmin == 1)
     @include('inc.navbarAdmin')
     @yield('content')
-    @include('inc.footer')
     @else
     @include('inc.navbar')
     @yield('content')
-    @include('inc.footer')
     @endif
     @else
     @include('inc.navbar')
     @yield('content')
-    @include('inc.footer')
     @endif
+    </div>
+    
+
+    @include('inc.footer')
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
